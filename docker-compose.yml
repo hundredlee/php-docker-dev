@@ -18,13 +18,13 @@ services:
     volumes:
       - ./groups/:/mnt/groups
   
-  console:
-    build:
-      context: ./services/console
-      dockerfile: Dockerfile
-    volumes_from: 
-      - php
-    tty: true
+  # console:
+  #   build:
+  #     context: ./services/console
+  #     dockerfile: Dockerfile
+  #   volumes_from: 
+  #     - php
+  #   tty: true
 
   web:
     image: nginx:1.11.1
