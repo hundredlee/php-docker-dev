@@ -16,7 +16,7 @@ services:
       context: ./services/php
       dockerfile: Dockerfile
     volumes:
-      - ./groups/:/mnt/groups
+      - /Users/hundredlee/Desktop/lumen-docker-base:/mnt/groups
   
   # console:
   #   build:
@@ -26,7 +26,7 @@ services:
   #     - php
   #   tty: true
 
-  
+
 
   web:
     image: nginx:1.11.1
