@@ -1,0 +1,46 @@
+version: '2'
+
+services:
+  db:
+    image: mariadb:10.1
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "groups"
+      MYSQL_USER: "groups"
+      MYSQL_PASSWORD: "123456"
+    volumes:
+      - db:/var/lib/mysql
+  
+  php:
+    build:
+      context: ./services/php
+      dockerfile: Dockerfile
+    volumes:
+      - ./groups/:/mnt/groups
+  
+  console:
+    build:
+      context: ./services/console
+      dockerfile: Dockerfile
+    volumes_from: 
+      - php
+    tty: true
+
+  web:
+    image: nginx:1.11.1
+    ports:
+      - "8080:80"
+    depends_on:
+      - php
+    volumes_from:
+      - php
+    volumes:
+      - ./services/web/config:/etc/nginx/conf.d/
+  redis:
+    image: redis:3.2.1
+    ports:
+      - "6379:6379"
+
+volumes:
+  db:
+    driver: local
