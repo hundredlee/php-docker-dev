@@ -16,7 +16,7 @@ services:
       context: ./services/php
       dockerfile: Dockerfile
     volumes:
-      - /Users/hundredlee/Desktop/lumen-docker-base:/mnt/groups
+      - /Users/hundredlee/PHPStorm/Forchange/groups:/mnt/groups
   
   # console:
   #   build:
@@ -25,9 +25,12 @@ services:
   #   volumes_from: 
   #     - php
   #   tty: true
-
-
-
+  redis:
+    build:
+      context: ./services/redis
+      dockerfile: Dockerfile
+    ports:
+      - "6379:6379"
   web:
     image: nginx:1.11.1
     ports:
@@ -38,10 +41,7 @@ services:
       - php
     volumes:
       - ./services/web/config:/etc/nginx/conf.d/
-  redis:
-    image: redis:3.2.1
-    ports:
-      - "6379:6379"
+
 
 volumes:
   db:
