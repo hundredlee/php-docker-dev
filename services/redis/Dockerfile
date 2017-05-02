@@ -1,8 +1,11 @@
 FROM alpine:latest
 MAINTAINER hundredlee hundred9411@gmail.com
 
+RUN echo -e "http://mirrors.ustc.edu.cn/alpine/latest-stable/main\n\
+http://mirrors.ustc.edu.cn/alpine/latest-stable/community" > /etc/apk/repositories
+
 # 软件包安装
-RUN apk add redis
+RUN apk update && apk add redis
 
 ADD redis.conf /etc/redis.conf
 
