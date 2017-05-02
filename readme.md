@@ -82,4 +82,4 @@ server {
 
 >* 复制IMAGE为 php的CONTAINER ID
 
->* 执行 ```docker exec ${CONTAINER ID} redis-server /etc/redis/redis.conf
+>* 执行 ``` docker exec ${CONTAINER ID} redis-server /etc/redis/redis.conf ```
