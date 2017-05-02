@@ -38,7 +38,7 @@
             └── demo.conf
 ```
 ## 运行demo项目
-> 打开iTerms
+> 打开iTerms 进入根目录，并顺序运行以下两条命令
 > 
 > ``` docker-compose build ```
 > 
