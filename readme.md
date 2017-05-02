@@ -44,6 +44,7 @@
 > 
 > ``` docker-compose up -d ```
 > 
+> 将127.0.0.1 demo.dev 加入hosts文件中
 > 打开浏览器访问 http://demo.dev
 > 如果你看到了```phpinfo();```的界面，那么你已经成功了。
 
