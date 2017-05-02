@@ -54,7 +54,7 @@
 - 4.例如 ```- /Users/hundredlee/PHPStorm/project:/mnt/project```
 
 ## 新建并添加nginx配置文件
-> 配置文件模板
+>* 配置文件模板,添加项目的nginx conf文件至services -> web -> conf
 
 ```
 server {
