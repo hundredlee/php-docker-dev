@@ -76,3 +76,10 @@ server {
 }
 
 ```
+
+## 需要手动运行redis
+>* 运行 ```dokcer ps```
+
+>* 复制IMAGE为 php的CONTAINER ID
+
+>* 执行 ```docker exec ${CONTAINER ID} redis-server /etc/redis/redis.conf
