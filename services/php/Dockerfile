@@ -15,7 +15,7 @@ RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/$P
 # RUN chmod +x source
 # RUN ./source
 
-RUN apt-get update && apt-get install -y redis-server libpng12-dev libjpeg-dev bash \
+RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev bash \
   && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
   && docker-php-ext-install gd mysqli pdo_mysql zip opcache redis
 
@@ -23,8 +23,4 @@ RUN apt-get update && apt-get install -y redis-server libpng12-dev libjpeg-dev b
 COPY ./config/php.ini /usr/local/etc/php/conf.d/
 COPY ./config/opcache.ini /usr/local/etc/php/conf.d/
 
-COPY ./config/redis.conf /etc/redis/redis.conf
-
 # CMD ["redis-server","/etc/redis/redis.conf"]
-
-

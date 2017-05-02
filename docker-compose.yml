@@ -1,6 +1,7 @@
 version: '2'
 
 services:
+
   db:
     image: mariadb:10.1
     environment:
@@ -10,16 +11,18 @@ services:
       MYSQL_PASSWORD: "123456"
     volumes:
       - db:/var/lib/mysql
+    restart: always
   
   php:
     build:
       context: ./services/php
       dockerfile: Dockerfile  
-    ports:
-      - "6379"
+    links:
+      - db
+      - redis
     volumes:
       - ./app/demo:/mnt/demo
-
+    restart: always
 
   web:
     image: nginx:1.11.1
@@ -31,7 +34,17 @@ services:
       - php
     volumes:
       - ./services/web/config:/etc/nginx/conf.d/
+    restart: always
 
+  redis:
+    build:
+      context: ./services/redis
+      dockerfile: Dockerfile
+    expose:
+      - "6379/tcp"
+    ports: 
+      - "6379:6379"
+    restart: always
 
 volumes:
   db:
