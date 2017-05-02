@@ -4,9 +4,9 @@ services:
   db:
     image: mariadb:10.1
     environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "groups"
-      MYSQL_USER: "groups"
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: "dev"
+      MYSQL_USER: "dev"
       MYSQL_PASSWORD: "123456"
     volumes:
       - db:/var/lib/mysql
@@ -18,7 +18,7 @@ services:
     ports:
       - "6379"
     volumes:
-      - /Users/hundredlee/PHPStorm/Forchange/groups:/mnt/groups
+      - ./app/demo:/mnt/demo
 
 
   web:
@@ -31,8 +31,6 @@ services:
       - php
     volumes:
       - ./services/web/config:/etc/nginx/conf.d/
-
-    hostname: groups.dev
 
 
 volumes:
