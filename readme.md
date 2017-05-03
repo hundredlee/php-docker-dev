@@ -25,6 +25,7 @@
 │       └── public
 │           └── index.php
 ├── docker-compose.yml
+├── readme.md
 └── services
     ├── console
     │   ├── Dockerfile
@@ -33,11 +34,13 @@
     │   ├── Dockerfile
     │   └── config
     │       ├── opcache.ini
-    │       ├── php.ini
-    │       └── redis.conf
+    │       └── php.ini
+    ├── redis
+    │   ├── Dockerfile
+    │   └── redis.conf
     └── web
         └── config
-            └── demo.conf
+            ├── demo.conf
 ```
 ## 运行demo项目
 > 打开iTerms 进入根目录，并顺序运行以下两条命令
