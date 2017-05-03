@@ -12,7 +12,6 @@
 > 
 > 怎么下载大家都知道的，不解释
 >
-> https://download.docker.com/mac/stable/DockerToolbox.pkg
 
 ## 获取docker开发环境脚本
 >* ``` git clone https://github.com/hundredlee/php-docker-dev.git ```
