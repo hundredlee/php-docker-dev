@@ -2,7 +2,7 @@
 ## 开发环境Docker化 之 世界上最好的语言
 >* 本文针对Mac用户，windows用户请绕行。
 >
->* https://github.com/hundredlee/docker-compose github地址
+>* https://github.com/hundredlee/php-docker-dev github地址
 >
 >* 欢迎贡献代码
 
@@ -13,7 +13,7 @@
 > 怎么下载大家都知道的，不解释
 
 ## 获取docker开发环境脚本
->* ``` git clone git@github.com:hundredlee/docker-compose.git ```
+>* ``` git clone https://github.com/hundredlee/php-docker-dev.git ```
 >
 >* 目录结构如下
 
