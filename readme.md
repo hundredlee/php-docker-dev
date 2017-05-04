@@ -83,3 +83,14 @@ server {
 }
 
 ```
+
+## 注意事项
+### MySQL
+- 在本地连接数据库的时候
+	- Hostname : 127.0.0.1
+	- username : dev
+	- password : 123456
+### Redis
+- 项目中的REDIS_HOST=redis
+
+

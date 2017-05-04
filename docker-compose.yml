@@ -24,8 +24,6 @@ services:
       - redis
     volumes:
       - ./app/demo:/mnt/demo
-      - /Users/hundredlee/PHPStorm/Forchange/groups:/mnt/groups
-      - /Users/hundredlee/PHPStorm/for_love:/mnt/for_love
     restart: always
 
   web:
