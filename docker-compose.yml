@@ -11,17 +11,21 @@ services:
       MYSQL_PASSWORD: "123456"
     volumes:
       - db:/var/lib/mysql
+    ports:
+      - "3306:3306/tcp"
     restart: always
   
   php:
     build:
       context: ./services/php
-      dockerfile: Dockerfile  
+      dockerfile: Dockerfile
     links:
       - db
       - redis
     volumes:
       - ./app/demo:/mnt/demo
+      - /Users/hundredlee/PHPStorm/Forchange/groups:/mnt/groups
+      - /Users/hundredlee/PHPStorm/for_love:/mnt/for_love
     restart: always
 
   web:
